@@ -20,7 +20,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('stores.urls')),
+    path('api/v1/stores/', include('stores.urls')),
+
+    path('api/v1/user/', include('user.urls')),
+    path('api/v1/auth/', include('djoser.urls')),
+    path('api/v1/auth-token/', include('djoser.urls.authtoken')),
 ]
 
 if settings.DEBUG:
